@@ -1,0 +1,19 @@
+def find_common_participants(group1, group2, spliter=','):
+    # Разделение строк на списки участников
+    participants1 = set(group1.split(spliter))
+    participants2 = set(group2.split(spliter))
+
+    # Нахождение общих участников
+    common_participants = participants1.intersection(participants2)
+
+    # Сортировка результата в алфавитном порядке и возврат
+    return sorted(common_participants)
+
+
+# Примеры использования
+participants_first_group = "Иванов|Петров|Сидоров"
+participants_second_group = "Петров|Сидоров|Смирнов"
+
+# Проверка с разделителем "|"
+common_participants = find_common_participants(participants_first_group, participants_second_group, spliter='|')
+print(common_participants)  # Вывод: ['Петров', 'Сидоров']

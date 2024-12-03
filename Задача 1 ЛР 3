@@ -1,0 +1,18 @@
+def find_item_index(items, item_to_find):
+    """Функция для поиска первого вхождения товара в списке."""
+    for index, item in enumerate(items):  # Используем enumerate для получения индекса
+        if item == item_to_find:
+            return index  # Вернуть индекс первого вхождения
+    return None  # Вернуть None, если товар не найден
+
+items_list = ['яблоко', 'банан', 'апельсин', 'груша', 'киви', 'банан']
+
+to_find_items = ['банан', 'груша', 'персик']
+
+# Поиск товаров и вывод результата
+for find_item in to_find_items:
+    index_item = find_item_index(items_list, find_item)  # Вызов функции для поиска индекса
+    if index_item is not None:
+        print(f"Первое вхождение товара '{find_item}' имеет индекс {index_item}.")
+    else:
+        print(f"Товар '{find_item}' не найден в списке.")
